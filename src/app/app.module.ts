@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { PokemonCardComponent } from './shared/components/pokemon-card/pokemon-card.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PokemonCardComponent } from './shared/components/pokemon-card/pokemon-c
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

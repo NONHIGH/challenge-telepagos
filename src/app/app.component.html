@@ -1,16 +1,35 @@
-<main class="Main">
+<ion-app>
+  <ion-content class="Main" [fullscreen]="true">
     <h1 class="Main__Title">Pokemons</h1>
     <section class="Main__Pokemons">
-        <ul class="Main__Pokemons_Container" *ngIf="pokemons.length > 3">
-            <li class="Main__Pokemons_Container-item" *ngFor="let pet of pokemons;" >
-                <app-pokemon-card
-                    [name]="pet?.name"
-                    [spriteFront]="pet.sprites.front_default ? pet.sprites.front_default : '../assets/test.png'"
-                    [pokemonId]="pet?.id"
-                    [type]="pet.type"
-                />
-            </li>
-        </ul>
+      <ion-grid class="Main__Pokemons_Container" *ngIf="pokemons.length > 3">
+        <ion-row>
+          <ion-col
+            sizeXl="2"
+            sizeLg="4"
+            sizeMd="4"
+            sizeSm="8"
+            sizeXs="11"
+            size="12"
+            class="Main__Pokemons_Container-item"
+            *ngFor="let pet of pokemons"
+          >
+            <app-pokemon-card
+              [name]="pet?.name"
+              [spriteFront]="
+                pet.sprites.front_default
+                  ? pet.sprites.front_default
+                  : '../assets/test.png'
+              "
+              [pokemonId]="pet?.id"
+              [type]="pet.type"
+            />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </section>
-    <button (click)="formNewTeam()" class="Main__Button">Formar nuevo equipo</button>
-</main>
+    <ion-button (click)="formNewTeam()" slot="fixed"
+      >Formar nuevo equipo</ion-button
+    >
+  </ion-content>
+</ion-app>

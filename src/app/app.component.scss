@@ -1,101 +1,76 @@
-@import 'src/styles/base.scss';
+@import "src/styles/base.scss";
 
-@mixin MainApp{
-    .Main{
-        &__Title{
-            color: $white-1;
+ion-content {
+  --background: none;
+  background: linear-gradient(to bottom, $gradient-1, $gradient-2);
+  
+  ion-grid {
+    --ion-grid-padding: unset;
+    --ion-grid-padding-xs: unset;
+    --ion-grid-padding-sm: unset;
+    --ion-grid-padding-md: unset;
+    --ion-grid-padding-lg: unset;
+    --ion-grid-padding-xl: unset;
+    ion-row{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        ion-col {
+            --ion-grid-column-padding: unset;
+            --ion-grid-column-padding-xs: unset;
+            --ion-grid-column-padding-sm: unset;
+            --ion-grid-column-padding-md: unset;
+            --ion-grid-column-padding-lg: unset;
+            --ion-grid-column-padding-xl: unset;
+            --ion-grid-columns: 12;
         }
-        &__Pokemons{
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            &_Container{
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                justify-content: center;
-    
-    
-                &-item{
-                    animation: fade-in .5s ease-in-out;
-                    border-radius: 1rem;
-                }
-            }
-        }
-    
-        &__Button{
-            background: $gold-1;
-            color: $black-1;
-            border-radius: 1rem;
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-            right: 0;
-            cursor: pointer;
-            border: unset;
-            outline: unset;
-            transition: 150ms;
-            &:hover{
-                background: linear-gradient(to bottom, $gradient-1 ,$gradient-2);
-                color: $white-1;
-            }
-            &:active{
-                background: linear-gradient(to bottom, $gradient-1 , $white-1 100%, $gradient-2);
-                color: $text-color;
-            }
-        }
-    
     }
+  }
+
+  ion-button[slot="fixed"] {
+    top: 0;
+    right: 10rem;
+    --background: #d4af37;
+    color: $black-1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border: unset;
+    outline: unset;
+    transition: 150ms;
+    &:hover {
+      --background: linear-gradient(to bottom, $gradient-1, $gradient-2);
+      color: $white-1;
+    }
+    &:active {
+      --background: linear-gradient(
+        to bottom,
+        $gradient-1,
+        $white-1 100%,
+        $gradient-2
+      );
+      color: $text-color;
+    }
+  }
 }
 
-@include lg(){
-    @include MainApp();
-    .Main{
-        &__Pokemons{
-            &_Container{
-
-                &-item{
-                    min-width: 16rem;
-                    max-width: 16rem;
-                }
-            }
-        }
+@mixin MainApp {
+  .Main {
+    &__Title {
+      color: $white-1;
     }
+  }
 }
 
-
-@include md(){
-    @include MainApp();
-    .Main{
-        &__Pokemons{
-            &_Container{
-
-                &-item{
-                    min-width: 40vw;
-                    max-width: 40vw;
-                }
-            }
-        }
-    }
+@include lg() {
+  @include MainApp();
 }
 
+@include md() {
+  @include MainApp();
+}
 
-@include sm(){
-    @include MainApp();
-    .Main{
-        &__Pokemons{
-            &_Container{
-                align-items: center;
-                &-item{
-                    min-width: 80dvw;
-                    max-width: 80dvw;
-                }
-            }
-        }
-        &__Button{
-            padding: .5rem;
-        }
-    }
+@include sm() {
+  @include MainApp();
 }
