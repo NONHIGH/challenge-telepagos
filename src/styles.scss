@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'styles/base.scss';
+
+*{
+    box-sizing: border-box;
+    font-family: 'RobotoMono Regular';
+}
+
+body{
+    background: linear-gradient(to bottom, $gradient-1, $gradient-2);
+    min-height: 100dvh;
+    max-height: 1000dvh;
+}
+
+
+h1, h2, h3, h4, h5{
+    font-family: 'RobotoMono Bold';
+}
+
+p, span{
+    font-family: 'RobotoMono Thin';
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: unset;
+}

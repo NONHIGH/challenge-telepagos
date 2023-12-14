@@ -1,0 +1,15 @@
+<main class="Main">
+    <h1 class="Main__Title">Pokemons</h1>
+    <section class="Main__Pokemons">
+        <ul class="Main__Pokemons_Container" *ngIf="pokemons.length > 3">
+            <li class="Main__Pokemons_Container-item" *ngFor="let pet of pokemons;" >
+                <app-pokemon-card
+                    [name]="pet?.name"
+                    [spriteFront]="pet.sprites.front_default ? pet.sprites.front_default : '../assets/test.png'"
+                    [pokemonId]="pet?.id"
+                />
+            </li>
+        </ul>
+    </section>
+    <button (click)="formNewTeam()" class="Main__Button">formar nuevo equipo</button>
+</main>

@@ -3,15 +3,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import { PokemonCardComponent } from './shared/components/pokemon-card/pokemon-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    PokemonCardComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

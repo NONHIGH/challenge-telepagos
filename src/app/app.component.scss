@@ -1,0 +1,25 @@
+@import 'src/styles/base.scss';
+
+.Main{
+    &__Title{
+        color: $white-1;
+    }
+    &__Pokemons{
+
+        &_Container{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+
+
+            &-item{
+                animation: fade-in .5s ease-in-out;
+                max-width: 30%;
+                border-radius: 1rem;
+            }
+        }
+    }
+}
