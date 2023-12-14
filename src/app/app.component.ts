@@ -42,8 +42,13 @@ export class AppComponent {
     })
   }
 
-  addToListOfPokemons(pokemons:any){
+  addToListOfPokemons(pokemons: any){
       this.pokemons = [];
+      pokemons.electric.type = "electric";
+      pokemons.fire.type = "fire";
+      pokemons.rock.type = "rock";
+      pokemons.water.type = "water";
+      //la manera mas peresoza de asignarle el tipo :).
       this.pokemons.push(pokemons.electric);
       this.pokemons.push(pokemons.fire);
       this.pokemons.push(pokemons.rock);
@@ -57,8 +62,6 @@ export class AppComponent {
       }
     })
   }
-
-
 
   getPokemonRamdom(pokemons: Array<PokemonReduced>) {
     const arrayIndex = Math.floor(Math.random() * pokemons.length);

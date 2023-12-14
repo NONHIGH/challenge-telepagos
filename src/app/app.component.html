@@ -7,9 +7,10 @@
                     [name]="pet?.name"
                     [spriteFront]="pet.sprites.front_default ? pet.sprites.front_default : '../assets/test.png'"
                     [pokemonId]="pet?.id"
+                    [type]="pet.type"
                 />
             </li>
         </ul>
     </section>
-    <button (click)="formNewTeam()" class="Main__Button">formar nuevo equipo</button>
+    <button (click)="formNewTeam()" class="Main__Button">Formar nuevo equipo</button>
 </main>
